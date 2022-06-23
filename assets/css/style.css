@@ -66,14 +66,23 @@ h1 {
     border-radius: 0.8rem;
     border: none;
     background-color: brown;
-    transition: all 0.3s;  
+    transition: all 0.3s; 
+    border: solid 1px transparent;
 }
+
 
 .incluir-tarefa button:hover {
     color: brown;
     background-color: white;
     border: 1px solid brown;
 }
+
+.incluir-tarefa button:disabled  {
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    color: white;
+    pointer-events: no;
+}  
 
 .tarefas-container {
     display: flex;

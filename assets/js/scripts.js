@@ -2,11 +2,21 @@ const inputTarefa = document.getElementById('tarefa');
 const btnInputTarefa = document.getElementById('btn-adicionar');
 const areaTarefa = document.getElementById('js-taferas-container');
 
+verificarCampoText();
+function verificarCampoText() {
+    if(inputTarefa.value == '') {
+        btnInputTarefa.setAttribute("disabled", true);
+    } else {
+        btnInputTarefa.removeAttribute("disabled", true);
+    }
+}
+
 btnInputTarefa.addEventListener('click', () => {
-    CriarTarefa();
+        CriarTarefa();  
 });
 
 function CriarTarefa() {
+
     let tarefa = document.createElement('div');
     tarefa.classList = 'tarefa';
     areaTarefa.appendChild(tarefa);
@@ -20,4 +30,5 @@ function CriarTarefa() {
     tarefa.appendChild(textTarefa);
 
     inputTarefa.value = '';
+    verificarCampoText();
 }
